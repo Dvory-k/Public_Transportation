@@ -22,7 +22,7 @@ public class Line {
 
     //  @ManyToMany(mappedBy = "lines")
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "stations_lines", joinColumns = @JoinColumn(name = "line_id"), inverseJoinColumns = @JoinColumn(name = "station_id"))
+    @JoinTable(name = "line", joinColumns = @JoinColumn(name = "line_id"), inverseJoinColumns = @JoinColumn(name = "station_id"))
     private List<StationLine> stationsLines;
 
 }

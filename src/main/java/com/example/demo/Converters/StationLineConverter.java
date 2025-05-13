@@ -28,7 +28,7 @@ public class StationLineConverter {
         stationLineDTO.setId(stationLine.getId());
         stationLineDTO.setLineNumber(stationLine.getLine().getNumber());
         stationLineDTO.setStationName(stationLine.getStation().getName());
-        stationLine.setStation_order(stationLine.getStation_order());   
+        stationLineDTO.setStation_order(stationLine.getStation_order());   
         return stationLineDTO;
 }
 
