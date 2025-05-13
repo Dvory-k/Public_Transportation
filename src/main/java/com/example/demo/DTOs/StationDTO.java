@@ -11,6 +11,6 @@ public class StationDTO {
     private long id;
     private String name;
 
-     private List<String> stationsLinesIDs;
+     private List<String> stationsLinesNumbers;
     
 }

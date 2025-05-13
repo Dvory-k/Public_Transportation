@@ -3,30 +3,21 @@ package com.example.demo.Converters;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-
-
 import com.example.demo.DTOs.StationDTO;
 import com.example.demo.Models.Station;
 
 
 public class StationConverter {
-    
-//     @Autowired
-
-//  private static StationLineRepository stationLineRepository;
-
 
 //המרת station לstationDto
     public  StationDTO toStationDTO(Station station) {
         StationDTO stationDTO = new StationDTO();
         stationDTO.setId(station.getId());
         stationDTO.setName(station.getName());
-        stationDTO.setStationsLinesIDs(station.getStationLines().stream().map(stationLine-> stationLine.getLine().getNumber()).collect(Collectors.toList()));
+        stationDTO.setStationsLinesNumbers(station.getStationLines().stream().map(stationLine-> stationLine.getLine().getNumber()).collect(Collectors.toList()));
 
         return stationDTO;
     }
-
 
     //המרת stationDto לstation
     public  Station toStation(StationDTO stationDTO) {

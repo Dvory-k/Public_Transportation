@@ -20,17 +20,17 @@ public class Travel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //לכל נסיעה אוטובוס אחד
+   //הרבה נסיעות לאוטובוס אחד
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bus_id")
     private Bus bus;
 
-    //לכל נסיעה נהג אחד
+    //הרבה נסיעות לנהג אחד
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "driver_id")
     private Driver driver;
 
-    //לכל נסיעה קו אחד
+   //הרבה נסיעות לקו אחד
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "line_id")
     private Line line;

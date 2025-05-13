@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import com.example.demo.DTOs.BusDTO;
 import com.example.demo.Models.Bus;
-import com.example.demo.Models.Travel;
+
 
 
 public class BusConverter {
@@ -19,7 +19,7 @@ public class BusConverter {
         busDTO.setId(bus.getId());
         busDTO.setLicensePlate(bus.getLicensePlate());
         busDTO.setSeats(bus.getSeats());
-        busDTO.setTravelsIDs(bus.getTravels().stream().map(Travel::getId).collect(Collectors.toList()) );
+        busDTO.setTravelsTimes(bus.getTravels().stream().map(travel-> travel.getDepature_time()).collect(Collectors.toList()) );
         return busDTO;
     }
 

@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DriverDTO {
+public class DriverDTO{
 
     private long id;
     private String name;

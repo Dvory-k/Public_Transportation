@@ -1,5 +1,6 @@
 package com.example.demo.DTOs;
 
+import java.sql.Time;
 import java.util.List;
 
 // import java.util.List;
@@ -15,7 +16,7 @@ public class BusDTO {
     private long id;
     private String licensePlate;
     private int seats;
-    private List<Long> travelsIDs;
+    private List<Time> travelsTimes;
 
 }
 

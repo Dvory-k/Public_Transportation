@@ -21,9 +21,6 @@ public class LineConverter {
     @Autowired
 
  private  TravelRepository travelRepository;
- @Autowired
- private  StationLineRepository stationLineRepository;
-
 
      public  LineDTO toLineDTO(Line line) {
         LineDTO lineDTO  = new LineDTO();
@@ -32,7 +29,7 @@ public class LineConverter {
         lineDTO.setSource(line.getSource());
         lineDTO.setDestination(line.getDestination());
         lineDTO.setTravelsIDs(line.getTravels().stream().map(Travel::getId).collect(Collectors.toList()));
-        lineDTO.setStationsLinesIDs(line.getStationsLines().stream().map(StationLine::getId).collect(Collectors.toList()));
+        lineDTO.setStationsLinesNames(line.getStationsLines().stream().map(stationLine->stationLine.getStation().getName()).collect(Collectors.toList()));
 
         return lineDTO;
     }

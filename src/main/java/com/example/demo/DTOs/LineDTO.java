@@ -18,6 +18,6 @@ public class LineDTO {
 
     private List<Long> travelsIDs;
  
-     private List<Long> stationsLinesIDs;
+     private List<String> stationsLinesNames;
 
 }
