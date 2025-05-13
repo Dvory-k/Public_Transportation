@@ -66,6 +66,35 @@ public Long addStationLine(StationLineDTO stationLineDTO) {
 }
 
 
+
+public boolean remove(Long stationLineId) {
+
+    StationLine stationLine = stationLineRepository.findById(stationLineId).orElse(null);
+    if(stationLine==null)
+        return false;
+
+    // שליפת כל תחנות הקו הזה לפי קו בלבד!
+    List<StationLine> stationLinesForLine = stationLineRepository.findAll().stream()
+        .filter(sl -> sl.getLine().getId() == stationLine.getLine().getId())
+        .collect(Collectors.toList());
+
+    // הדפסת בדיקה
+    // System.out.println("Updating stations with order >= " + stationLineDTO.getStation_order());
+
+    // הזזה קדימה של תחנות קיימות מהסדר הנתון ומעלה
+    for (StationLine sl : stationLinesForLine) {
+        if (sl.getStation_order() >= stationLine.getStation_order()) {
+            sl.setStation_order(sl.getStation_order() - 1);
+            stationLineRepository.save(sl);
+        }
+    }
+  // מחיקת תחנה חדשה במיקום הנכון
+    stationLineRepository.deleteById(stationLineId);
+    return true;
+}
+
+
+
   public List<StationLineDTO> getAll()
     {
     return stationLineRepository.findAll().stream()

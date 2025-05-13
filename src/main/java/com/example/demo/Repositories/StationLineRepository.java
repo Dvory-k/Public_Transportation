@@ -6,5 +6,5 @@ import com.example.demo.Models.*;
 
 @Repository
 public interface StationLineRepository extends JpaRepository<StationLine, Long> {
-    
+
 }

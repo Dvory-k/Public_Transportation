@@ -38,6 +38,13 @@ public class StationController {
         return ResponseEntity.badRequest().build();
     }
 
+        @GetMapping("/searchByStation/{idStation}/{lineNumber}")
+    public ResponseEntity<String> searchByStation(Long idStation,String lineNumber)  {
+        if(lineNumber.equals("*"))
+        return ResponseEntity.ok().body(stationService.SearchByStation(idStation));
+        return ResponseEntity.ok().body(stationService.SearchByStation(idStation, lineNumber));
+    }
+
     
 
 }
