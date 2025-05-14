@@ -1,7 +1,6 @@
 package com.example.demo.Models;
 
 import java.sql.Time;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;

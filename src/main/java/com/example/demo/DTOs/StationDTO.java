@@ -11,6 +11,7 @@ public class StationDTO {
     private long id;
     private String name;
 
+    //הקווים שעוברים בתחנה הנוכחית
      private List<String> stationsLinesNumbers;
     
 }

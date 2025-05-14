@@ -1,7 +1,6 @@
 package com.example.demo.Models;
 
 import java.util.List;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,8 +20,9 @@ public class Line {
     private List<Travel> travels;
 
     //  @ManyToMany(mappedBy = "lines")
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "line", joinColumns = @JoinColumn(name = "line_id"), inverseJoinColumns = @JoinColumn(name = "station_id"))
-    private List<StationLine> stationsLines;
-
+    // @ManyToMany(fetch = FetchType.LAZY)
+    // @JoinTable(name = "line", joinColumns = @JoinColumn(name = "line_id"), inverseJoinColumns = @JoinColumn(name = "station_id"))
+    // private List<StationLine> stationsLines;
+@OneToMany(mappedBy = "line", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+private List<StationLine> stationsLines;
 }

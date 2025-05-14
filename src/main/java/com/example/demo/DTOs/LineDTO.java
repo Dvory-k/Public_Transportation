@@ -14,10 +14,9 @@ public class LineDTO {
     private String source;
     private String destination;
 
-    //לכל קו יש הרבה נסיעות
-
+    // לכל קו יש הרבה נסיעות
     private List<Long> travelsIDs;
- 
-     private List<String> stationsLinesNames;
+//לכל קו יש הרבה תחנות שהוא עובר בהם
+    private List<String> stationsLinesNames;
 
 }

@@ -1,8 +1,6 @@
 package com.example.demo.DTOs;
 
 import java.sql.Time;
-
-
 import lombok.*;
 
 @Data

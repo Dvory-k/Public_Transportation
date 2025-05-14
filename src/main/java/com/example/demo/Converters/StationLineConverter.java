@@ -1,11 +1,8 @@
 package com.example.demo.Converters;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.example.demo.DTOs.StationLineDTO;
 import com.example.demo.Models.Line;
 import com.example.demo.Models.Station;
@@ -13,9 +10,7 @@ import com.example.demo.Models.StationLine;
 import com.example.demo.Repositories.LineRepository;
 import com.example.demo.Repositories.StationRepository;
 
-
 public class StationLineConverter {
-    
     
 @Autowired
  private  LineRepository lineRepository;

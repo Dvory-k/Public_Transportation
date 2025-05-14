@@ -2,10 +2,6 @@ package com.example.demo.DTOs;
 
 import java.sql.Time;
 import java.util.List;
-
-// import java.util.List;
-
-
 import lombok.*;
 
 @Data

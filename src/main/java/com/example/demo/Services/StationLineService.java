@@ -2,7 +2,6 @@ package com.example.demo.Services;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.Converters.StationLineConverter;
@@ -13,7 +12,6 @@ import com.example.demo.Models.StationLine;
 import com.example.demo.Repositories.LineRepository;
 import com.example.demo.Repositories.StationLineRepository;
 import com.example.demo.Repositories.StationRepository;
-
 
 @Service
 public class StationLineService {
@@ -66,9 +64,10 @@ public Long addStationLine(StationLineDTO stationLineDTO) {
 }
 
 
-
+//הסרת תחנה ממסלול של קו ועדכון כל התחנות בסדר הנכון
 public boolean remove(Long stationLineId) {
 
+    //שליפת התחנה לקו
     StationLine stationLine = stationLineRepository.findById(stationLineId).orElse(null);
     if(stationLine==null)
         return false;
@@ -77,9 +76,6 @@ public boolean remove(Long stationLineId) {
     List<StationLine> stationLinesForLine = stationLineRepository.findAll().stream()
         .filter(sl -> sl.getLine().getId() == stationLine.getLine().getId())
         .collect(Collectors.toList());
-
-    // הדפסת בדיקה
-    // System.out.println("Updating stations with order >= " + stationLineDTO.getStation_order());
 
     // הזזה קדימה של תחנות קיימות מהסדר הנתון ומעלה
     for (StationLine sl : stationLinesForLine) {
@@ -92,7 +88,6 @@ public boolean remove(Long stationLineId) {
     stationLineRepository.deleteById(stationLineId);
     return true;
 }
-
 
 
   public List<StationLineDTO> getAll()

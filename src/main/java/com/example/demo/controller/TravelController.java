@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demo.DTOs.TravelDTO;
 import com.example.demo.Services.TravelService;
 
@@ -25,9 +24,5 @@ public class TravelController {
             return ResponseEntity.status(HttpStatus.CREATED).body(result);
         return ResponseEntity.badRequest().build();
     }
-    @PostMapping("/debug")
-public ResponseEntity<String> debug() {
-    return ResponseEntity.ok(travelService == null ? "travelService is NULL" : "travelService is OK");
-}
 
 }
